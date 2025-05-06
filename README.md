@@ -1,1 +1,29 @@
-# latent-ortho-sim
+# Latent Confounder Simulation Study
+
+This project simulates multivariate regression scenarios where the outcome is influenced by latent (unobserved) confounders. It evaluates several estimators for the primary effect of interest under varying conditions, including:
+
+- **Naive OLS estimator** (ignores confounding),
+- **Oracle estimator** (uses true latent confounders),
+- **Factor-adjusted estimator** (recovers latent structure via factor analysis and corrects for bias).
+
+##  Features
+
+- Modular, clean R codebase
+- Grid-based simulation framework across combinations of sample size (`n`), predictors (`p`), outcomes (`d`), and latent dimension (`q`)
+- Optional integration with high-performance C++ (via `RcppArmadillo`) for computing standard errors and confidence interval coverage
+- Results saved per-scenario and summarized in a final `.csv`
+
+##  File Structure
+
+- `simulate_data.R`: Generates synthetic datasets with latent confounding
+- `estimate_methods.R`: Implements three estimators
+- `run_simulation_grid.R`: Runs simulations over user-specified parameter grid
+- `main.R`: Entry point to run everything
+- `ortho_cov_central.cpp`: Optional Rcpp file for efficient standard error estimation (optional but recommended)
+
+## Requirements
+
+Install the necessary R packages before running:
+
+```r
+install.packages(c("MASS", "psych", "statmod", "Rcpp", "RcppArmadillo","cate"))
