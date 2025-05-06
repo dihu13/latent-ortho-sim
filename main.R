@@ -4,7 +4,6 @@ main <- function() {
         library(MASS)
         library(Matrix)
         library(statmod)
-        library(psych)  # for factor.analysis
         library(Rcpp)
         library(RcppArmadillo)
         
