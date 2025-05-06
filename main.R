@@ -11,15 +11,8 @@ main <- function() {
         source("estimate_methods.R")
         source("run_simulation_grid.R")
         
-        # Placeholder for Rcpp function
-        rcpp_cov_fn <- NULL
-        if (file.exists("ortho_cov_central.so")) {
-                dyn.load("ortho_cov_central.so")
-                rcpp_cov_fn <- get("CovarianceCpp_ortho1")
-        }
-        
-        results <- run_simulation_grid(nrep = 20)
-        print(head(results))
+        results <- run_simulation_grid(nrep = 50)
+        print(results)
 }
 
 # Run the main function
