@@ -3,7 +3,7 @@
 This project simulates multivariate regression scenarios where the outcome is influenced by latent (unobserved) confounders. It evaluates several estimators for the primary effect of interest under varying conditions, including:
 
 - **Naive OLS estimator** (ignores confounding),
-- **Oracle estimator** (assume true latent confounders are observable),
+- **Oracle estimator** (assumes true latent confounders are observable),
 - **Factor-adjusted estimator** (recovers latent structure via factor analysis and corrects for bias).
 
 ##  Features
